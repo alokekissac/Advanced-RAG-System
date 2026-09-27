@@ -32,14 +32,18 @@ class Answer:
 
 class RAGPipeline:
     def __init__(self, documents: list[Document], embedder=None, use_llm: bool = True,
-                 min_confidence: float = 0.65, chunk_words: int = 140, overlap: int = 25):
+                 min_confidence: float = 0.65, llm_min_confidence: float = 0.45,
+                 chunk_words: int = 140, overlap: int = 25):
         t = time.perf_counter()
         self.documents = documents
         self.chunks = [c for d in documents for c in chunk_document(d, chunk_words, overlap)]
         self.retriever = HybridRetriever(self.chunks, embedder or make_embedder())
         self.extractive = ExtractiveGenerator(corpus_idf(self.chunks))
         self.llm = GeminiGenerator() if use_llm else None
+        # Extractive answers need strong evidence (threshold tuned on the dev split). An LLM is
+        # instructed to say "not found" itself, so it gets a lower retrieval gate as a first filter.
         self.min_confidence = min_confidence
+        self.llm_min_confidence = llm_min_confidence
         self.index_ms = (time.perf_counter() - t) * 1000
 
     @classmethod
@@ -74,7 +78,8 @@ class RAGPipeline:
         conf = confidence(hits)
         base = dict(question=question, confidence=round(conf, 3), sources=sources, warnings=warnings,
                     queries=queries)
-        if conf < self.min_confidence or not sources:
+        gate = self.llm_min_confidence if use_llm else self.min_confidence
+        if conf < gate or not sources:
             timings["total"] = (time.perf_counter() - t0) * 1000
             return Answer(answer=NOT_FOUND, abstained=True, generator="guardrail", timings_ms=timings, **base)
 
@@ -86,6 +91,9 @@ class RAGPipeline:
             except RuntimeError as e:
                 warnings.append(f"LLM unavailable, used extractive answer instead ({e}).")
         if text is None:
+            if conf < self.min_confidence:
+                timings["total"] = (time.perf_counter() - t0) * 1000
+                return Answer(answer=NOT_FOUND, abstained=True, generator="guardrail", timings_ms=timings, **base)
             text, gen = self.extractive.generate(question, sources)
         timings["generate"] = (time.perf_counter() - t1) * 1000
 

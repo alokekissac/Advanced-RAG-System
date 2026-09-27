@@ -35,11 +35,16 @@ class HybridRetriever:
         self._max_idf = max(self.bm25.idf.values(), default=1.0)
 
     # ------------------------------------------------------------------ scoring
-    def _embed_query(self, q: str) -> np.ndarray:
+    def _embed_queries(self, queries: list[str]):
+        """Embed queries in one call. Returns None if the embedding API fails
+        (quota, network): retrieval then degrades to BM25 instead of erroring."""
         try:
-            return self.embedder.embed([q], task="RETRIEVAL_QUERY")[0]
-        except TypeError:
-            return self.embedder.embed([q])[0]
+            try:
+                return self.embedder.embed(queries, task="RETRIEVAL_QUERY")
+            except TypeError:
+                return self.embedder.embed(queries)
+        except Exception:
+            return None
 
     def _coverage(self, q_terms: set[str], i: int) -> float:
         """IDF-weighted share of query terms present in chunk i.
@@ -54,10 +59,16 @@ class HybridRetriever:
         return sum(w[t] for t in q_terms & self._tokens[i]) / sum(w.values())
 
     def retrieve(self, query: str, k: int = 5, mode: str = "hybrid", mmr_lambda: float = 0.75,
-                 pool: int = 20) -> list[Hit]:
+                 pool: int = 20, qv=None) -> list[Hit]:
         sparse = self.bm25.scores(query)
-        qv = self._embed_query(query)
-        dense = self.store.search(qv)
+        if qv is None:
+            vecs = self._embed_queries([query])
+            qv = None if vecs is None else vecs[0]
+        if qv is None:                      # embedding service unavailable
+            dense = np.zeros(len(self.chunks))
+            mode = "bm25"
+        else:
+            dense = self.store.search(qv)
 
         if mode == "bm25":
             fused = sparse
@@ -81,8 +92,9 @@ class HybridRetriever:
             return self.retrieve(queries[0], k=k, mode=mode)
         best: dict[str, Hit] = {}
         fused: dict[str, float] = {}
-        for q in queries:
-            for rank, h in enumerate(self.retrieve(q, k=k * 2, mode=mode)):
+        vecs = self._embed_queries(queries)
+        for qi, q in enumerate(queries):
+            for rank, h in enumerate(self.retrieve(q, k=k * 2, mode=mode, qv=None if vecs is None else vecs[qi])):
                 cid = h.chunk.chunk_id
                 fused[cid] = fused.get(cid, 0.0) + 1.0 / (RRF_K + rank + 1)
                 if cid not in best or h.coverage > best[cid].coverage:

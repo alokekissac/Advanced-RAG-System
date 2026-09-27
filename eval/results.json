@@ -2,7 +2,7 @@
   "corpus": {
     "documents": 9,
     "chunks": 56,
-    "index_ms": 1054.7
+    "index_ms": 1131.0
   },
   "retrieval": {
     "bm25": {
@@ -275,7 +275,7 @@
   },
   "latency_ms": {
     "p50": 1.5,
-    "p95": 1.739999999999999
+    "p95": 1.8
   },
-  "runtime_s": 2.0
+  "runtime_s": 2.2
 }

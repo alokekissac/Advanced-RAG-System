@@ -6,8 +6,9 @@ On Vercel this file is the entrypoint (zero config).
 """
 from __future__ import annotations
 
-import os
+import logging
 import threading
+import traceback
 from pathlib import Path
 from typing import Literal
 
@@ -26,7 +27,10 @@ MAX_DOCS, MAX_CHARS, MAX_UPLOAD = 5, 300_000, 5 * 1024 * 1024
 
 app = FastAPI(title="Advanced RAG System", version="1.0.0",
               description="Hybrid retrieval, grounded answers with citations, abstention and prompt-injection guardrails.")
-app.mount("/static", StaticFiles(directory=ROOT / "public" / "static"), name="static")
+# On Vercel, public/ is served by the CDN and may be left out of the function bundle,
+# so only mount it when it exists (local runs, other hosts).
+if (ROOT / "public" / "static").is_dir():
+    app.mount("/static", StaticFiles(directory=ROOT / "public" / "static"), name="static")
 
 _lock = threading.Lock()
 _pipeline: RAGPipeline | None = None
@@ -65,7 +69,10 @@ class AskRequest(BaseModel):
 # ------------------------------------------------------------------ routes
 @app.get("/", include_in_schema=False)
 def index():
-    return FileResponse(ROOT / "public" / "index.html")
+    page = ROOT / "public" / "index.html"
+    if not page.exists():
+        raise HTTPException(404, "UI not bundled; it is served from the CDN")
+    return FileResponse(page)
 
 
 @app.get("/api/health")
@@ -103,7 +110,11 @@ def ask(req: AskRequest):
         pipe = RAGPipeline(docs, embedder=LSAEmbedder())
     else:
         pipe = demo_pipeline()
-    return pipe.ask(req.question, k=req.k, mode=req.mode, expand=req.expand).to_dict()
+    try:
+        return pipe.ask(req.question, k=req.k, mode=req.mode, expand=req.expand).to_dict()
+    except Exception as e:  # log the traceback for the platform logs, return a readable error
+        logging.error("ask failed: %s", traceback.format_exc())
+        raise HTTPException(500, f"{type(e).__name__}: {e}")
 
 
 @app.post("/api/extract")

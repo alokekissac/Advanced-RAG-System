@@ -65,7 +65,7 @@ class GeminiEmbedder:
                               "taskType": task, "outputDimensionality": self.dims} for t in texts]}
         req = urllib.request.Request(url, data=json.dumps(body).encode(), method="POST",
                                      headers={"Content-Type": "application/json", "x-goog-api-key": self.key})
-        with urllib.request.urlopen(req, timeout=30) as r:
+        with urllib.request.urlopen(req, timeout=15) as r:
             data = json.load(r)
         return _normalize(np.array([e["values"] for e in data["embeddings"]], dtype=float))
 
