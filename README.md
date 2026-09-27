@@ -127,7 +127,7 @@ flowchart LR
 
 | Guardrail | How it works |
 |---|---|
-| **Abstention** | Confidence = 0.85 × IDF-weighted coverage of the question's content words by the best chunk + 0.15 × semantic similarity. Words no document contains get maximum weight, so *"What is the dress code?"* scores low even though *"code"* appears in the IT policy. Below the dev-tuned threshold, the system declines. |
+| **Abstention** | Confidence = 0.85 × IDF-weighted coverage of the question's content words by the best chunk + 0.15 × semantic similarity. Words no document contains get maximum weight, so *"What is the dress code?"* scores low even though *"code"* appears in the IT policy. Below the dev-tuned threshold (0.65), the system declines. In LLM mode, a looser retrieval gate (0.45) is used and the model is instructed to answer *not found* itself. |
 | **Prompt injection** | Retrieved text is screened for instructions aimed at the model (*"ignore previous instructions"*, *"reveal your system prompt"*, …). Matching paragraphs are removed before generation and the user is warned. The demo corpus includes a poisoned vendor note to show this. |
 | **Citation verification** | For every cited sentence, at least half its content words must appear in the cited source; otherwise the answer shows a warning. |
 | **Input limits** | Questions of 3–500 characters, at most 5 uploaded documents, 300k characters each and 5 MB per file. Uploaded text is indexed in memory per request and never stored. |
