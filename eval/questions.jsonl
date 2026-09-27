@@ -1,0 +1,73 @@
+{"id": 1, "question": "How many days of annual leave do full-time employees get?", "answerable": true, "doc_id": "02-annual-leave", "answer_keywords": ["25"]}
+{"id": 2, "question": "How much annual leave do I get after five years of service?", "answerable": true, "doc_id": "02-annual-leave", "answer_keywords": ["27"]}
+{"id": 3, "question": "How many unused leave days can be carried over?", "answerable": true, "doc_id": "02-annual-leave", "answer_keywords": ["5"]}
+{"id": 4, "question": "By what date must carried-over leave be used?", "answerable": true, "doc_id": "02-annual-leave", "answer_keywords": ["31 March"]}
+{"id": 5, "question": "How much notice is needed to book five or more consecutive days of leave?", "answerable": true, "doc_id": "02-annual-leave", "answer_keywords": ["four weeks"]}
+{"id": 6, "question": "How many paid sick days are there per year?", "answerable": true, "doc_id": "02-annual-leave", "answer_keywords": ["10"]}
+{"id": 7, "question": "When is a medical certificate required for sick leave?", "answerable": true, "doc_id": "02-annual-leave", "answer_keywords": ["three"]}
+{"id": 8, "question": "How long is paid paternity leave?", "answerable": true, "doc_id": "02-annual-leave", "answer_keywords": ["4 weeks"]}
+{"id": 9, "question": "How many volunteering days can employees take?", "answerable": true, "doc_id": "02-annual-leave", "answer_keywords": ["2"]}
+{"id": 10, "question": "Within how many days must expenses be submitted?", "answerable": true, "doc_id": "03-expenses-and-travel", "answer_keywords": ["30"]}
+{"id": 11, "question": "Who approves an expense between 250 and 2,000 euro?", "answerable": true, "doc_id": "03-expenses-and-travel", "answer_keywords": ["department head"]}
+{"id": 12, "question": "What is the daily meal allowance when travelling abroad?", "answerable": true, "doc_id": "03-expenses-and-travel", "answer_keywords": ["75"]}
+{"id": 13, "question": "Is alcohol reimbursed?", "answerable": true, "doc_id": "03-expenses-and-travel", "answer_keywords": ["never"]}
+{"id": 14, "question": "When is premium economy allowed on flights?", "answerable": true, "doc_id": "03-expenses-and-travel", "answer_keywords": ["6 hours"]}
+{"id": 15, "question": "What is the hotel cap per night in Europe outside Ireland?", "answerable": true, "doc_id": "03-expenses-and-travel", "answer_keywords": ["220"]}
+{"id": 16, "question": "What is the mileage rate for a personal car?", "answerable": true, "doc_id": "03-expenses-and-travel", "answer_keywords": ["0.40"]}
+{"id": 17, "question": "How many days before departure should flights be booked?", "answerable": true, "doc_id": "03-expenses-and-travel", "answer_keywords": ["14"]}
+{"id": 18, "question": "What is the minimum password length?", "answerable": true, "doc_id": "04-it-security", "answer_keywords": ["14"]}
+{"id": 19, "question": "How quickly must a lost or stolen laptop be reported?", "answerable": true, "doc_id": "04-it-security", "answer_keywords": ["1 hour"]}
+{"id": 20, "question": "After how many minutes must laptops lock?", "answerable": true, "doc_id": "04-it-security", "answer_keywords": ["5 minutes"]}
+{"id": 21, "question": "How often are laptops replaced?", "answerable": true, "doc_id": "04-it-security", "answer_keywords": ["4 years"]}
+{"id": 22, "question": "Can confidential information be pasted into external AI tools?", "answerable": true, "doc_id": "04-it-security", "answer_keywords": ["must not"]}
+{"id": 23, "question": "What are the four data classification levels?", "answerable": true, "doc_id": "04-it-security", "answer_keywords": ["Restricted"]}
+{"id": 24, "question": "How often does security run phishing simulations?", "answerable": true, "doc_id": "04-it-security", "answer_keywords": ["quarter"]}
+{"id": 25, "question": "How many days per week must office-based staff be in the office?", "answerable": true, "doc_id": "05-remote-work", "answer_keywords": ["2 days"]}
+{"id": 26, "question": "For how many days per year can I work from another EU country?", "answerable": true, "doc_id": "05-remote-work", "answer_keywords": ["20"]}
+{"id": 27, "question": "How large is the home office allowance for new employees?", "answerable": true, "doc_id": "05-remote-work", "answer_keywords": ["400"]}
+{"id": 28, "question": "What is the daily remote working payment?", "answerable": true, "doc_id": "05-remote-work", "answer_keywords": ["3.20"]}
+{"id": 29, "question": "Is public Wi-Fi allowed for work?", "answerable": true, "doc_id": "05-remote-work", "answer_keywords": ["VPN"]}
+{"id": 30, "question": "How long is the probation period?", "answerable": true, "doc_id": "06-onboarding", "answer_keywords": ["6 months"]}
+{"id": 31, "question": "How big is the personal learning budget?", "answerable": true, "doc_id": "06-onboarding", "answer_keywords": ["1,500"]}
+{"id": 32, "question": "How many days do new starters have to complete mandatory training?", "answerable": true, "doc_id": "06-onboarding", "answer_keywords": ["30"]}
+{"id": 33, "question": "When is the laptop shipped to new starters?", "answerable": true, "doc_id": "06-onboarding", "answer_keywords": ["five working days"]}
+{"id": 34, "question": "On what day of the month are salaries paid?", "answerable": true, "doc_id": "07-benefits", "answer_keywords": ["25th"]}
+{"id": 35, "question": "How much does the company match in pension contributions?", "answerable": true, "doc_id": "07-benefits", "answer_keywords": ["6%"]}
+{"id": 36, "question": "What is the target annual bonus?", "answerable": true, "doc_id": "07-benefits", "answer_keywords": ["8%"]}
+{"id": 37, "question": "In which month's payroll are bonuses paid?", "answerable": true, "doc_id": "07-benefits", "answer_keywords": ["June"]}
+{"id": 38, "question": "What is the Cycle to Work limit for an e-bike?", "answerable": true, "doc_id": "07-benefits", "answer_keywords": ["1,500"]}
+{"id": 39, "question": "At what wind speed are flight tests stopped?", "answerable": true, "doc_id": "08-health-and-safety", "answer_keywords": ["38"]}
+{"id": 40, "question": "At what charge are drone batteries stored?", "answerable": true, "doc_id": "08-health-and-safety", "answer_keywords": ["40"]}
+{"id": 41, "question": "Within how long must accidents be reported in SafeTrack?", "answerable": true, "doc_id": "08-health-and-safety", "answer_keywords": ["24 hours"]}
+{"id": 42, "question": "Where is the company headquartered?", "answerable": true, "doc_id": "01-company-overview", "answer_keywords": ["Grand Canal Quay"]}
+{"id": 43, "question": "How many people does Halcyon employ?", "answerable": true, "doc_id": "01-company-overview", "answer_keywords": ["142"]}
+{"id": 44, "question": "What are the core collaboration hours?", "answerable": true, "doc_id": "01-company-overview", "answer_keywords": ["10:00"]}
+{"id": 45, "question": "Who is the Head of IT and Security?", "answerable": true, "doc_id": "01-company-overview", "answer_keywords": ["Rahul Menon"]}
+{"id": 46, "question": "What is the lead time VoltEdge quoted for battery packs?", "answerable": true, "doc_id": "09-vendor-notes", "answer_keywords": ["12-week"]}
+{"id": 47, "question": "What is the dress code?", "answerable": false, "doc_id": null, "answer_keywords": []}
+{"id": 48, "question": "Does Halcyon offer a gym membership?", "answerable": false, "doc_id": null, "answer_keywords": []}
+{"id": 49, "question": "What is the parking policy at the Cork office?", "answerable": false, "doc_id": null, "answer_keywords": []}
+{"id": 50, "question": "How much is the relocation package for new hires?", "answerable": false, "doc_id": null, "answer_keywords": []}
+{"id": 51, "question": "Can I bring my dog to the office?", "answerable": false, "doc_id": null, "answer_keywords": []}
+{"id": 52, "question": "What is the stock option vesting schedule?", "answerable": false, "doc_id": null, "answer_keywords": []}
+{"id": 53, "question": "What is the company's revenue in 2025?", "answerable": false, "doc_id": null, "answer_keywords": []}
+{"id": 54, "question": "Who is the head of marketing?", "answerable": false, "doc_id": null, "answer_keywords": []}
+{"id": 55, "question": "How many days of jury duty leave are paid?", "answerable": false, "doc_id": null, "answer_keywords": []}
+{"id": 56, "question": "What is the policy on company cars?", "answerable": false, "doc_id": null, "answer_keywords": []}
+{"id": 57, "question": "Is there a free lunch on Fridays?", "answerable": false, "doc_id": null, "answer_keywords": []}
+{"id": 58, "question": "What is the travel insurance provider?", "answerable": false, "doc_id": null, "answer_keywords": []}
+{"id": 59, "question": "How much time off do I get each year?", "answerable": true, "doc_id": "02-annual-leave", "answer_keywords": ["25"], "paraphrase": true}
+{"id": 60, "question": "What's the per diem for food on a trip to Spain?", "answerable": true, "doc_id": "03-expenses-and-travel", "answer_keywords": ["75"], "paraphrase": true}
+{"id": 61, "question": "I left my computer on the bus, what should I do?", "answerable": true, "doc_id": "04-it-security", "answer_keywords": ["1 hour"], "paraphrase": true}
+{"id": 62, "question": "How long before my trial period ends?", "answerable": true, "doc_id": "06-onboarding", "answer_keywords": ["6 months"], "paraphrase": true}
+{"id": 63, "question": "When does my salary land in my account?", "answerable": true, "doc_id": "07-benefits", "answer_keywords": ["25th"], "paraphrase": true}
+{"id": 64, "question": "Is it too windy to fly the drone at 45 km/h?", "answerable": true, "doc_id": "08-health-and-safety", "answer_keywords": ["38"], "paraphrase": true}
+{"id": 65, "question": "Can I claim a beer with dinner on a work trip?", "answerable": true, "doc_id": "03-expenses-and-travel", "answer_keywords": ["Alcohol"], "paraphrase": true}
+{"id": 66, "question": "How much money do I get to buy a desk and chair for home?", "answerable": true, "doc_id": "05-remote-work", "answer_keywords": ["400"], "paraphrase": true}
+{"id": 67, "question": "Can I paste a customer contract into ChatGPT?", "answerable": true, "doc_id": "04-it-security", "answer_keywords": ["Confidential"], "paraphrase": true}
+{"id": 68, "question": "What happens to holidays I don't use by year end?", "answerable": true, "doc_id": "02-annual-leave", "answer_keywords": ["carried over"], "paraphrase": true}
+{"id": 69, "question": "Do I need a second person with me at a wind farm?", "answerable": true, "doc_id": "08-health-and-safety", "answer_keywords": ["two people"], "paraphrase": true}
+{"id": 70, "question": "How much can I spend on courses and conferences?", "answerable": true, "doc_id": "06-onboarding", "answer_keywords": ["1,500"], "paraphrase": true}
+{"id": 71, "question": "What should I do if my drone battery looks puffy?", "answerable": true, "doc_id": "08-health-and-safety", "answer_keywords": ["sand bin"], "paraphrase": true}
+{"id": 72, "question": "Who pays for my family's private health cover?", "answerable": true, "doc_id": "07-benefits", "answer_keywords": ["50%"], "paraphrase": true}
+{"id": 73, "question": "Can I work from Portugal for a couple of weeks?", "answerable": true, "doc_id": "05-remote-work", "answer_keywords": ["20 working days"], "paraphrase": true}
