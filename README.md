@@ -6,6 +6,8 @@
 
 Python · FastAPI · BM25 + dense embeddings · vector search · Gemini LLM (optional) · evaluation harness
 
+### [🔎 Live demo: advanced-rag-system-steel.vercel.app](https://advanced-rag-system-steel.vercel.app/)
+
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Falokekissac%2FAdvanced-RAG-System&project-name=advanced-rag-system&env=GEMINI_API_KEY&envDescription=Optional%3A%20Google%20Gemini%20key%20for%20LLM%20answers%2C%20embeddings%20and%20query%20rewriting.%20Without%20it%20the%20app%20runs%20in%20extractive%20mode.&envLink=https%3A%2F%2Faistudio.google.com%2Fapikey)
 
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat-square&logo=python&logoColor=white)
