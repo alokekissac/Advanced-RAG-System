@@ -275,4 +275,4 @@ Click **Deploy with Vercel** at the top. The Gemini key is optional; without it 
 ## 👤 Author
 
 **Aloke K. Issac**, AI Engineer & Full-Stack Developer · Dublin, Ireland
-[Portfolio](https://alokekissac-github-io.vercel.app/) · [GitHub](https://github.com/alokekissac) · [LinkedIn](https://www.linkedin.com/in/alokekisssac/)
+[Portfolio](https://alokekissac.xyz/) · [GitHub](https://github.com/alokekissac) · [LinkedIn](https://www.linkedin.com/in/alokekisssac/)
